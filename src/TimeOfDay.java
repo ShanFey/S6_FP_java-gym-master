@@ -1,4 +1,3 @@
-import java.util.Comparator;
 
 public class TimeOfDay implements Comparable<TimeOfDay> {
 
@@ -14,9 +13,9 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
 
     @Override
     public int compareTo(TimeOfDay other) {
-        if (this.hours != other.hours){
+        if (this.hours != other.hours) {
             return Integer.compare(this.hours, other.hours);
-        } else{
+        } else {
             return Integer.compare(this.minutes, other.minutes);
         }
     }
