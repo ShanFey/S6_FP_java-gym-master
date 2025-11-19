@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class TimeOfDay implements Comparable<TimeOfDay> {
 
@@ -26,5 +27,19 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
 
     public int getMinutes() {
         return minutes;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || this.getClass() != obj.getClass()) return false;
+
+        TimeOfDay timeOfDay = (TimeOfDay) obj;
+        return Objects.equals(timeOfDay.hours, this.hours) && Objects.equals(timeOfDay.minutes,this.minutes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.hours,this.minutes);
     }
 }

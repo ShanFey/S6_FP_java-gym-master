@@ -35,7 +35,7 @@ public class Timetable {
         return timetable.get(dayOfWeek).get(timeOfDay);
     }
 
-    public List<CounterOfTrainings> getCountByCoaches(){
+    public List<CounterOfTrainings> getCountByCoaches() {
         HashMap<Coach, Integer> coachStats = new HashMap<>();
 
         for (TreeMap<TimeOfDay, ArrayList<TrainingSession>> sessionsPerDay : timetable.values()) {
