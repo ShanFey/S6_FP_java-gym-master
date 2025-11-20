@@ -35,11 +35,11 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
         if (obj == null || this.getClass() != obj.getClass()) return false;
 
         TimeOfDay timeOfDay = (TimeOfDay) obj;
-        return Objects.equals(timeOfDay.hours, this.hours) && Objects.equals(timeOfDay.minutes,this.minutes);
+        return this.hours == timeOfDay.hours && this.minutes == timeOfDay.minutes;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.hours,this.minutes);
+        return Objects.hash(hours,minutes);
     }
 }

@@ -89,7 +89,7 @@ class TimetableTest {
         // Проверить, что за четверг вернулось два занятия в правильном порядке: сначала в 13:00, потом в 20:00
         TreeMap<TimeOfDay, ArrayList<TrainingSession>>  thursdayTrainingSession = timetable.getTrainingSessionsForDay(DayOfWeek.THURSDAY);
         NavigableSet<TimeOfDay> thursdayTrainingSessionNavigable = thursdayTrainingSession.navigableKeySet();
-        assertNotEquals(thursdayTrainingSessionNavigable.first(),new TimeOfDay(13, 0),"Порядок по времени не соблюден");
+        assertEquals(thursdayTrainingSessionNavigable.first(),new TimeOfDay(13, 0),"Порядок по времени не соблюден");
         // Проверить, что за вторник не вернулось занятий
         assertNull(timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY),"Занятие добавлено некорректно: день недели!");
 
